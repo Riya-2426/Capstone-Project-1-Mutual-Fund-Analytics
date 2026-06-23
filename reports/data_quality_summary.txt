@@ -1,0 +1,34 @@
+- Data Quality Summary
+
+All provided datasets were successfully loaded using Pandas and inspected for structure, data types, and missing values.
+
+- Fund Master Exploration
+
+* Identified 10 unique fund houses.
+* Identified 2 major categories: Equity and Debt.
+* Extracted unique sub-categories and risk grades.
+* Verified the structure of key scheme-related fields.
+
+- AMFI Scheme Code Validation
+
+AMFI scheme codes were validated between the fund_master and nav_history datasets.
+Validation Result = PASS
+All AMFI scheme codes present in fund_master were found in nav_history, indicating referential integrity between the datasets.
+
+- Data Quality Findings
+
+1. All datasets were successfully ingested.
+2. Data types appeared consistent across the inspected files.
+3. A total of 12 missing values were identified in File 4(04_monthly_sip_inflows.csv) 6th column(yoy_growth_pct).
+4. No missing AMFI scheme codes were found during validation.
+5. No duplicate scheme code issues were observed during the initial inspection.
+
+- Recommendation
+
+The missing values in File 4 should be reviewed to determine whether they represent unavailable data, reporting gaps, or fields that require
+imputation before further analysis.
+
+- Conclusion
+
+Overall, the datasets are suitable for analysis. The AMFI code validation was successful, and the only notable data quality issue identified 
+during the initial assessment was the presence of 12 missing values in File 4.
